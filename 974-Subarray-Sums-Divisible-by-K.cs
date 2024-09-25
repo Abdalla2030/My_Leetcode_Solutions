@@ -1,6 +1,6 @@
 public class Solution {
     public int SubarraysDivByK(int[] nums, int k)
-        {
+    {
             int size = nums.Length;
 
             for (int i = 1; i < size; i++)
@@ -28,5 +28,5 @@ public class Solution {
 
             return sol; 
   
-        }
+    }
 }
