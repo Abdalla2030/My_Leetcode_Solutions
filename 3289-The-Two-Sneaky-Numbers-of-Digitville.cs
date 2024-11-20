@@ -1,21 +1,20 @@
 public class Solution {
     public int[] GetSneakyNumbers(int[] nums) {
-         int[] freq = new int[nums.Length+5]; 
-         Array.Fill(freq,0);
+        Dictionary<int, int> frequencyMap = new Dictionary<int, int>();
+        int [] res = new int [2];
+        int j = 0 ; 
 
-         int [] res = new int [2];
-         int j = 0 ; 
+        foreach (int num in nums) {
+            if (frequencyMap.ContainsKey(num)) {
+                frequencyMap[num]++;
 
-         for(int i = 0 ;i<nums.Length;i++){
-            freq[nums[i]]++;
-
-            if(  freq[nums[i]] == 2){
-                res[j++] = nums[i];
-            }
-         }
-
-         return res;
-
-
+                if (frequencyMap[num] == 2) {
+                    res[j++] = num ; 
+                }
+            } else {
+                frequencyMap[num] = 1;
+            }     
+        }
+        return res; 
     }
 }
