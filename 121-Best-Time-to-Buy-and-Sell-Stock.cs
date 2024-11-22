@@ -1,13 +1,16 @@
 public class Solution {
     public int MaxProfit(int[] prices) {
-        int minPrice = prices[0];
-        int maxProfit = 0 ;
+        int left = 0 , right = 1 ;
+        int res = 0 ;
 
-        foreach(int price in prices){
-            minPrice = Math.Min(minPrice , price);
-            maxProfit = Math.Max(maxProfit , price - minPrice);
+        while(right<prices.Length){
+            if(prices[left]<prices[right]){
+                res = Math.Max(res,prices[right]-prices[left]);
+            }else{
+                left = right;
+            }
+            right++;
         }
-
-        return maxProfit ; 
+        return res; 
     }
 }
