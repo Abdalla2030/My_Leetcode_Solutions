@@ -13,16 +13,12 @@ public class Solution {
                 {
                     return false;
                 }
-
-                if (stack.Peek() == '{' && c != '}'||
-                    stack.Peek() == '[' && c != ']' ||
-                    stack.Peek() == '(' && c != ')'){
+                char top = stack.Pop();
+                if (top == '{' && c != '}'||
+                    top == '[' && c != ']' ||
+                    top == '(' && c != ')'){
                     return false;
-                }else{
-                    stack.Pop(); 
                 }
-                
-            
             }
         }
         return stack.Count == 0;
