@@ -14,11 +14,12 @@ public class Solution {
 
         while (st.Count > 0)
         {
-            sb.Append(st.Pop());
+            //sb.Append(st.Pop());
+            sb.Insert(0,st.Pop());
         }
 
-
-        return new string (sb.ToString().Reverse().ToArray());
+        // new string (sb.ToString().Reverse().ToArray())
+        return sb.ToString();
 
 
     }
