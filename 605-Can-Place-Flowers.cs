@@ -7,9 +7,6 @@ public class Solution {
                 flowerbed[i] = 1; 
                 n--; 
             }
-            if(n <= 0) {
-                return true;
-            }
         }
         return n <= 0;
     }
