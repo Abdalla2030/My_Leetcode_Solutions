@@ -18,8 +18,6 @@ public class Solution {
                 sum += roman[s[i]];
             }
         }
-
         return sum ; 
-
     }
 }
