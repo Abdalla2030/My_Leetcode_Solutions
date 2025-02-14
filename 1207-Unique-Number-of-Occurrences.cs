@@ -1,28 +1,24 @@
 public class Solution {
     public bool UniqueOccurrences(int[] arr) {
-        Dictionary<int, int> dic = new Dictionary<int, int>();
-
-        int[] freq = new int[arr.Length+1]; 
-        Array.Fill(freq,0);
-
-
-        for(int i = 0;i<arr.Length;i++){
-            if(dic.ContainsKey(arr[i])){
-                dic[arr[i]]++; 
-            }else{
-                dic[arr[i]] = 1;
+        Dictionary<int,int> dic = new Dictionary <int,int>();
+        foreach (int item in arr){
+            if(dic.ContainsKey(item)){
+                dic[item]++;
             }
-             
-            
+            else{
+                dic[item] = 1 ; 
+            }
+           
         }
 
-        foreach (KeyValuePair<int, int> entry in dic) {
-           if(freq[entry.Value] != 0){
-            return false ;
-           }
-           freq[entry.Value] = entry.Key;
+        HashSet<int> set = new HashSet<int>();
+        foreach (int value in dic.Values) {
+            if(!set.Add(value)){
+                return false;
+            }
         }
 
-        return true ; 
+        return true;
+
     }
 }
