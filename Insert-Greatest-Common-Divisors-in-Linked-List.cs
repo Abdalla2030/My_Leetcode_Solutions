@@ -22,7 +22,8 @@ public class Solution {
         ListNode curr = head.next;  
 
         while (curr != null) {
-            int gcdValue = GCD(prev.val, curr.val);
+            int gcdValue = GCD(Math.Max(prev.val, curr.val), Math.Min(prev.val, curr.val));
+
 
             ListNode newNode = new ListNode(gcdValue);
             prev.next = newNode;
