@@ -1,3 +1,5 @@
+// O(N) --> Time Complexity 
+// O(1) --> Space Complexity
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) {
