@@ -9,7 +9,7 @@ public class RecentCounter {
     public int Ping(int t) {
         queue.Enqueue(t);
 
-        while(queue.Peek()<t-3000){
+        while(queue.Count > 0 && queue.Peek()<t-3000){
             queue.Dequeue();
         }
 
