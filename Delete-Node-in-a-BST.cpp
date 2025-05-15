@@ -31,7 +31,7 @@ public:
                     cur= cur->left;
                 }
                 root->val = cur->val ;
-                root->right = deleteNode(root->right,root->val);
+                root->right = deleteNode(root->right,cur->val);
             }
 
         }
